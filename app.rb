@@ -8,8 +8,6 @@ class App < Sinatra::Base
 
   post "/student" do
     @student = Student.new(params[:student])
-    puts @student.grade
-    puts @student.name
 
     params[:student][:courses].each do |details|
       Course.new(details)
